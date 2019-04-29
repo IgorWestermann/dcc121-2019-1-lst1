@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 13</title>
+</head>
+<body>
+    
+    <div id="interativo">Clique-me!</div>
+
+
+    <script>
+        var interativo = document.getElementById("interativo");
+
+        interativo.addEventListener("click", function () {
+            interativo = document.getElementById("interativo");
+            interativo.textContent = "Funcionou!";
+        });
+        
+    </script>
+</body>
+</html>
