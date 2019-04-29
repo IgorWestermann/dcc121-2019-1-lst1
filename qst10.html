@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p id="nome"></p>
+    <p id="sobrenome"></p>
+    <h1 id="nomecompleto"></h1>
+    
+    <script>
+        
+        var nome = document.getElementById("nome");
+        nome.textContent = "Igor";
+        
+        var sobrenome = document.getElementById("sobrenome");
+        sobrenome.textContent = "Westermann Lima";
+        
+        var nomecompleto = document.getElementById("nomecompleto");
+        nomecompleto.innerHTML ="Bem vindo " +nome.innerText+" "+ sobrenome.innerText + "!";
+
+    </script>
+</body>
+
+</html>
