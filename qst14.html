@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 13</title>
+</head>
+
+<body>
+
+    <div id="x"> 7 </div>
+    <div id="y"> 5 </div>
+    <div id="produto"> 35 </div>
+    <div id="soma"> 12 </div>
+    <button id=calcular>Calcular</button>
+    
+    <script>
+        var x, y, produto, soma, botao;
+
+        x = document.getElementById("x");
+        y = document.getElementById("y");
+        
+        produto = document.getElementById("produto");
+        soma = document.getElementById("soma");
+        botao = document.getElementById("calcular");
+
+        x.contentEditable = true;
+        y.contentEditable = true;
+       
+        botao.addEventListener("click", function () {
+            document.body.innerHTML = "O produto de " + x.textContent + " e " + 
+            y.textContent + " é " + produto.textContent + "! " +
+            
+            "A soma de " + x.textContent + " e " + 
+            y.textContent + " é " + soma.textContent + "!";
+
+        });
+
+
+    </script>
+</body>
+
+</html>
