@@ -17,11 +17,11 @@
         <span id="bolo">60</span> em Broas e Bolos.</p>
 
         <p id="resultado"></p>
+        <p id="melhorias"></p>
 
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
 
-        <p id="melhorias"></p>
         
 
 
@@ -56,6 +56,17 @@
         melhorias.textContent = "";
     });
 
+    
+    botaoAvaliar.addEventListener("click", function avaliarClick(){
+        media = (Number(bolos.textContent) + Number(confeitaria.textContent) + Number(cobertura.textContent)) / 3;
+        if (media < 70){
+            melhorias.textContent = "Você está reprovado com média " + media + "!";
+        } else{
+            resultado.textContent = "Parabéns " + nome.textContent + "! Você está aprovado com média " + media + "!";
+        }
+    });
+
+    
 </script>
 
 </html>
