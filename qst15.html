@@ -18,6 +18,9 @@
 
         <p id="resultado"></p>
         <p id="melhorias"></p>
+        <p id="dica"></p>
+        <p id="dica"></p>
+        <p id="dica"></p>
 
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
@@ -44,6 +47,8 @@
     botaoAvaliar = document.getElementById("avaliar");
     botaoLimpar = document.getElementById("limpar");
     melhorias = document.getElementById("melhorias");
+    dica = document.getElementById("dica");
+    
 
     nome.contentEditable = "true";
     anos.contentEditable = "true";
@@ -59,11 +64,23 @@
     
     botaoAvaliar.addEventListener("click", function avaliarClick(){
         media = (Number(bolos.textContent) + Number(confeitaria.textContent) + Number(cobertura.textContent)) / 3;
+        melhorias == 60;
         if (media < 70){
-            melhorias.textContent = "Você está reprovado com média " + media + "!";
+            resultado.textContent = "Você está reprovado com média " + media.toFixed(2) + "!";
         } else{
-            resultado.textContent = "Parabéns " + nome.textContent + "! Você está aprovado com média " + media + "!";
+            resultado.textContent = "Parabéns " + nome.textContent + "! Você está aprovado com média " + media.toFixed(2) + "!";
         }
+
+        if(Number(bolos.textContent) < 60){
+            melhorias.textContent = nome.textContent + ", considere estudar mais Broas e Bolos!";
+        } 
+        if(Number(cobertura.textContent) < 60){
+            melhorias.textContent = nome.textContent +", considere estudar mais Cobertura!";
+        }
+        if(Number(confeitaria.textContent) < 60){
+            melhorias.textContent = nome.textContent +", considere estudar mais Confeitaria!";
+        }
+        
     });
 
     
