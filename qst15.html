@@ -18,16 +18,9 @@
 
         <p id="resultado"></p>
         <p id="melhorias"></p>
-        <p id="dica"></p>
-        <p id="dica"></p>
-        <p id="dica"></p>
 
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
-
-        
-
-
 
     </main>
     
@@ -37,6 +30,7 @@
 <script>
 
     var nome, anos, confeitaria, coberturas, bolos, botaoAvaliar, botaoLimpar, resultado, melhorias, media;
+    var eConfeitaria, eCoberturas, eBolos;
 
     nome = document.getElementById("nome");
     anos = document.getElementById("anos");
@@ -46,8 +40,10 @@
     resultado = document.getElementById("resultado");
     botaoAvaliar = document.getElementById("avaliar");
     botaoLimpar = document.getElementById("limpar");
-    melhorias = document.getElementById("melhorias");
-    dica = document.getElementById("dica");
+    melhorias = document.getElementById("melhorias");    
+    melhorias = document.getElementById("melhorias");    
+    melhorias = document.getElementById("melhorias");    
+   
     
 
     nome.contentEditable = "true";
@@ -56,32 +52,39 @@
     cobertura.contentEditable = "true";
     bolos.contentEditable = "true";
 
-    botaoLimpar.addEventListener("click", function limparClick(){
+
+    botaoLimpar.addEventListener("click", limparClick);
+    botaoAvaliar.addEventListener("click", avaliarClick);
+    
+    function limparClick(){
         resultado.textContent = "";
         melhorias.textContent = "";
-    });
+    }
 
-    
-    botaoAvaliar.addEventListener("click", function avaliarClick(){
-        media = (Number(bolos.textContent) + Number(confeitaria.textContent) + Number(cobertura.textContent)) / 3;
-        melhorias == 60;
+    function avaliarClick(){
+        eBolos = Number(bolos.textContent);
+        eConfeitaria = Number(confeitaria.textContent);
+        eCoberturas = Number(cobertura.textContent);
+        media = (eBolos + eCoberturas + eConfeitaria) / 3;
+        melhorias.textContent ="";
         if (media < 70){
             resultado.textContent = "Você está reprovado com média " + media.toFixed(2) + "!";
         } else{
-            resultado.textContent = "Parabéns " + nome.textContent + "! Você está aprovado com média " + media.toFixed(2) + "!";
+            resultado.textContent = "Parabéns " + nome.textContent + 
+            "! Você está aprovado com média " + media.toFixed(2) + "!";
         }
 
-        if(Number(bolos.textContent) < 60){
-            melhorias.textContent = nome.textContent + ", considere estudar mais Broas e Bolos!";
+        if(eBolos < 60){
+            melhorias.textContent += nome.textContent + ", considere estudar mais Broas e Bolos!";
         } 
-        if(Number(cobertura.textContent) < 60){
-            melhorias.textContent = nome.textContent +", considere estudar mais Cobertura!";
+        if(eCoberturas < 60){
+            melhorias.textContent += nome.textContent +", considere estudar mais Cobertura!";
         }
-        if(Number(confeitaria.textContent) < 60){
-            melhorias.textContent = nome.textContent +", considere estudar mais Confeitaria!";
+        if(eConfeitaria < 60){
+            melhorias.textContent += nome.textContent +", considere estudar mais Confeitaria!";
         }
         
-    });
+    }
 
     
 </script>
